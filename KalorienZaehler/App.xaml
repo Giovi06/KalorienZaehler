@@ -1,0 +1,36 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:KalorienZaehler"
+             x:Class="KalorienZaehler.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="DailyCaloriesTemplate">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="10">
+                        <!-- Zeigt das Datum -->
+                        <Label Text="{Binding Date, StringFormat='{}{0:dd.MM.yyyy}'}"
+                               FontSize="20"
+                               VerticalOptions="Center"/>
+
+                        <!-- Abstand zwischen Datum und Kalorien -->
+                        <Label Text=" : "
+                               FontSize="20"
+                               VerticalOptions="Center"/>
+
+                        <!-- Zeigt die Kalorienanzahl -->
+                        <Label Text="{Binding Calories}"
+                               FontSize="20"
+                               VerticalOptions="Center"/>
+                        
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

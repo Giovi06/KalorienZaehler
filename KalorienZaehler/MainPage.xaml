@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        x:Class="KalorienZaehler.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label
+                Text="Kalorienzähler"
+                FontSize="30"
+                HorizontalOptions="Center"
+                SemanticProperties.HeadingLevel="Level1"/>
+
+            <Label
+                x:Name="CaloriesLabel"
+                Text="0"
+                FontSize="36"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            <Entry
+                x:Name="CaloriesEntry"
+                Placeholder="Kalorien hinzufügen"
+                Keyboard="Numeric"
+                HorizontalOptions="Center"
+                WidthRequest="200"/>
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="15">
+                <Button
+                    Text="+"
+                    FontSize="20"
+                    WidthRequest="80"
+                    Clicked="OnAddCaloriesClicked"/>
+                <Button
+                    Text="-"
+                    FontSize="20"
+                    WidthRequest="80"
+                    Clicked="OnSubtractCaloriesClicked"/>
+            </HorizontalStackLayout>
+            <Button
+                Text="Tag abschließen"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Clicked="OnEndDayClicked"/>
+            <Button
+                Text="Kalorien-Historie anzeigen"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Clicked="OnShowHistoryClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
